@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using R5T.D0062;
 using R5T.D0065;
 using R5T.D0066;
+using R5T.T0064;
 
 
 namespace R5T.D0067
@@ -11,7 +12,8 @@ namespace R5T.D0067
     /// <summary>
     /// Provides the current directory path in the development environment (which Visual Studio sets to the project directory by default), and the executable directory path otherwise.
     /// </summary>
-    public class AspNetCoreContentRootDirectoryPathProvider : IContentRootDirectoryPathProvider
+    [ServiceImplementationMarker]
+    public class AspNetCoreContentRootDirectoryPathProvider : IContentRootDirectoryPathProvider, IServiceImplementation
     {
         private ICurrentDirectoryPathProvider CurrentDirectoryPathProvider { get; }
         private IEnvironmentNameProvider EnvironmentNameProvider { get; }

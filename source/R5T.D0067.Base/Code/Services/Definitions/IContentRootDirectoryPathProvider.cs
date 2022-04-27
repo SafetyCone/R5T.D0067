@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+using R5T.T0064;
+
 
 namespace R5T.D0067
 {
-    public interface IContentRootDirectoryPathProvider
+    [ServiceDefinitionMarker]
+    public interface IContentRootDirectoryPathProvider : IServiceDefinition
     {
         Task<string> GetContentRootDirectoryPath();
     }
